@@ -7,17 +7,10 @@
 class connectdb
 {	
 		private $connectthis;
-		private $type;
-		private $user;
-		private $pass;
-		private $db;
+		
 		public function __construct( $type , $username , $password , $database )
 		{
-			$this->user=$username;
-			$this->pass=$password;
-			$this->type=$type;
-			$this->db=$database;
-			$this->connectthis = new mysqli($this->type,$this->user,$this->pass,$this->db) or die("unable to connect");
+			$this->connectthis = new mysqli( $type , $user , $pass , $db ) or die("unable to connect");
 		}
 		public function getConnection()
 		{
