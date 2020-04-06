@@ -6,11 +6,11 @@
 
 class connectdb
 {	
-		public $connectthis;
-		public $type;
-		public $user;
-		public $pass;
-		public $db;
+		private $connectthis;
+		private $type;
+		private $user;
+		private $pass;
+		private $db;
 		public function __construct( $type , $username , $password , $database )
 		{
 			$this->user=$username;
@@ -18,6 +18,10 @@ class connectdb
 			$this->type=$type;
 			$this->db=$database;
 			$this->connectthis = new mysqli($this->type,$this->user,$this->pass,$this->db) or die("unable to connect");
+		}
+		public function getConnection()
+		{
+			return $this->connectthis;
 		}
 		public function SelectAllRow( $sql )
 		{
