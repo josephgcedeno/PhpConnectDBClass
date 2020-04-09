@@ -28,10 +28,10 @@ class connectdb
 		}
 		public function SelectAllColumn( string $tablename = null, $id = null, string $identifier = null )
 		{
-				$sql="SELECT * FROM $tablename WHERE ".(($identifier) ? $identifier : 'id')." = '$id' ";
+			$sql="SELECT * FROM $tablename WHERE ".(($identifier) ? $identifier : 'id')." = '$id' ";
 
-				$result=$this->connectthis->query($sql);
-				return mysqli_fetch_assoc($result);
+			$result=$this->connectthis->query($sql);
+			return mysqli_fetch_assoc($result);
 		}
 		public function InsertData( $tablename , $data )
 		{
